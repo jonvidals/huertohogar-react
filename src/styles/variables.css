@@ -1,0 +1,17 @@
+:root {
+  /* 🎨 Paleta institucional */
+  --color-primary: #2E8B57; /* Verde esmeralda */
+  --color-secondary: #FFD700; /* Amarillo mostaza */
+  --color-accent: #F1C40F;
+  --color-bg: #F7F7F7;
+  --color-text: #1F2937;
+  --color-muted: #6B7280;
+
+  /* 🧱 Tipografía */
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-title: 'Playfair Display', serif;
+
+  /* 🌈 Sombras y bordes */
+  --shadow-light: 0 2px 8px rgba(0,0,0,0.05);
+  --radius: 12px;
+}

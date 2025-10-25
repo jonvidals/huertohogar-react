@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600&display=swap');
+
+html, body, #root {
+  height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  color: var(--color-primary);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn-primary:hover {
+  background-color: #256d45;
+  border-color: #256d45;
+}
+
+.container-narrow {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
+              url('../assets/img/verduras/hero.jpg') center/cover no-repeat;
+
+}
+/* ===============================
+   Navbar transparente animada
+=================================*/
+.custom-navbar {
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar-transparent {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.navbar-scrolled {
+  background: rgba(0, 0, 0, 0.9) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+}
+
+/* ===============================
+   Logo y texto
+=================================*/
+.brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  transition: color 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+
+.brand-default .brand-text {
+  color: #00ff88;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+/* Estado con scroll */
+/* ===== Logo animado sutil ===== */
+
+/* Estado inicial (sin scroll) */
+.brand-default .logo-icon {
+  color: #27e68c; /* verde esmeralda suave */
+  filter: drop-shadow(0 0 6px rgba(39, 230, 140, 0.6));
+  animation: leafIdle 6s ease-in-out infinite;
+  transform: scale(1);
+}
+
+/* Estado con scroll */
+.brand-scrolled .logo-icon {
+  color: #ffe066; /* amarillo cálido */
+  filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.8));
+  animation: leafGlow 4s ease-in-out infinite;
+  transform: scale(1.05);
+}
+
+/* Animación de respiración (idle) */
+@keyframes leafIdle {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 6px rgba(39, 230, 140, 0.6));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 10px rgba(39, 230, 140, 0.8));
+  }
+}
+
+/* Animación de brillo al hacer scroll */
+@keyframes leafGlow {
+  0%, 100% {
+    color: #ffe066;
+    filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.8));
+  }
+  50% {
+    color: #ffb347; /* pasa a un dorado más cálido */
+    filter: drop-shadow(0 0 12px rgba(255, 179, 71, 1));
+  }
+}
+
+.brand-scrolled .brand-text {
+  color: #ffffff;
+}
+
+/* ===============================
+   Links del navbar
+=================================*/
+.nav-item {
+  transition: color 0.4s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+/* Sin scroll */
+.link-default {
+  color: #f7f7f7 !important;
+}
+.link-default:hover {
+  color: #00ff88 !important;
+  transform: translateY(-2px);
+}
+
+/* Con scroll */
+.link-scrolled {
+  color: #f7f7f7 !important;
+}
+.link-scrolled:hover {
+  color: #ffd700 !important;
+  transform: translateY(-2px);
+}
