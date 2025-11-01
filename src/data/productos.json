@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lechuga Orgánica",
+    "precio": 1490,
+    "stock": 45,
+    "categoria": "Hortalizas",
+    "descripcion": "Lechuga fresca sin pesticidas",
+    "imagen": "/images/lechuga.jpg",
+    "activo": true
+  },
+  {
+    "id": 2,
+    "nombre": "Tomate Cherry",
+    "precio": 1990,
+    "stock": 60,
+    "categoria": "Hortalizas",
+    "descripcion": "Tomates dulces ideales para ensaladas",
+    "imagen": "/images/tomate-cherry.jpg",
+    "activo": true
+  },
+  {
+    "id": 3,
+    "nombre": "Miel de Ulmo 500g",
+    "precio": 5490,
+    "stock": 25,
+    "categoria": "Procesados",
+    "descripcion": "Miel natural de bosque nativo",
+    "imagen": "/images/miel-ulmo.jpg",
+    "activo": true
+  }
+]
+  

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/common/Header";
 import Footer from "./components/common/Footer";
 import Home from "./pages/Home";
+import Productos from "./pages/Productos"; // 👈 agregado
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/global.css";
 
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <main className="flex-fill">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<Productos />} /> {/* 👈 agregado */}
           </Routes>
         </main>
         <Footer />

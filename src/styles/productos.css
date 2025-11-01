@@ -1,0 +1,52 @@
+.hero {
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: 1rem;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.btn-add-cart {
+  background-color: #38c172;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.btn-add-cart:hover {
+  background-color: #2e8b57;
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
