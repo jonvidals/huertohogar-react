@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Lechuga Orgánica",
+    "price": 1490,
+    "stock": 45,
+    "category": "Hortalizas",
+    "description": "Lechuga fresca sin pesticidas",
+    "image": "https://png.pngtree.com/png-clipart/20201208/original/pngtree-one-organic-lettuce-png-image_5514198.jpg",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Tomate Cherry",
+    "price": 1990,
+    "stock": 60,
+    "category": "Hortalizas",
+    "description": "Tomates dulces ideales para ensaladas",
+    "image": "https://png.pngtree.com/png-clipart/20210530/original/pngtree-cherry-tomato-fruit-crop-png-image_6342931.jpg",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Manzana Fuji (Kg)",
+    "price": 1690,
+    "stock": 85,
+    "category": "Frutas",
+    "description": "Manzana dulce y crujiente, ideal para comer fresca o en postres.",
+    "image": "https://png.pngtree.com/png-clipart/20201208/original/pngtree-three-red-super-sweet-and-refreshing-fuji-apples-png-image_5562737.jpg",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Huevos de Campo (Docena)",
+    "price": 3800,
+    "stock": 30,
+    "category": "Proteínas",
+    "description": "Huevos de gallinas libres, alto valor nutricional",
+    "image": "https://png.pngtree.com/png-clipart/20250120/original/pngtree-natural-brown-eggs-in-open-paper-tray-png-image_19960050.png",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "Leche",
+    "price": 2550,
+    "stock": 50,
+    "category": "Lácteos y Bebidas",
+    "description": "Alternativa vegetal sin azúcar añadido",
+    "image": "https://santaisabel.vtexassets.com/arquivos/ids/378676/Leche-Semidescremada-Surlat-1-L.jpg?v=638524638885900000",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Naranjas Valencia (1Kg)",
+    "price": 990,
+    "stock": 75,
+    "category": "Frutas",
+    "description": "Naranjas de jugo, alta en vitamina C",
+    "image": "https://png.pngtree.com/png-clipart/20230809/original/pngtree-orangeillustration-food-fresh-hybrid-vector-picture-image_10188967.png",
+    "active": true
+  },
+  {
+    "id": 8,
+    "name": "Plátanos Cavendish 1kg",
+    "price": 990,
+    "stock": 99,
+    "category": "Frutas",
+    "description": "Plátanos Cavendish frescos, fuente de potasio y energía.",
+    "image": "https://grupoacon.com/wp-content/uploads/2025/03/acon31.png",
+    "active": true
+  },
+  {
+    "id": 9,
+    "name": "Zanahorias Orgánicas",
+    "price": 990,
+    "stock": 99,
+    "category": "Hortalizas",
+    "description": "Zanahorias cultivadas sin pesticidas, ideales para jugos o ensaladas.",
+    "image": "https://static.vecteezy.com/system/resources/previews/059/021/465/non_2x/fresh-organic-carrot-with-green-tops-isolated-on-black-background-free-png.png",
+    "active": true
+  }
+]

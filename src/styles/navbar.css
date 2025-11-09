@@ -1,0 +1,343 @@
+/* ===============================
+   🌿 NAVBAR GENERAL
+=================================*/
+.custom-navbar {
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #111 !important; /* 🔹 Siempre negro */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 🔹 Logo */
+.brand-text span {
+  color: #2e8b57;
+}
+
+.logo-icon {
+  color: #2e8b57;
+  font-size: 1.6rem;
+}
+
+/* 🔹 Links */
+.nav-item {
+  color: #f8f9fa !important;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #ffd700 !important;
+}
+
+/* 🔹 Toggle (hamburguesa) */
+.menu-toggle {
+  border: none !important;
+  background: transparent !important;
+}
+
+.menu-toggle .navbar-toggler-icon {
+  filter: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* ===============================
+   🔐 BOTÓN LOGIN
+=================================*/
+.nav-actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 1.5rem;
+  z-index: 5000;
+}
+
+.login-button {
+  background: transparent;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.6rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  color: #ffd700 !important;
+}
+
+.login-icon {
+  font-size: 1.3rem;
+  color: #ffd700;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.login-button:hover .login-icon {
+  transform: scale(1.15);
+}
+
+.login-text {
+  display: inline;
+}
+
+/* ===============================
+   🔳 LOGIN POPOVER
+=================================*/
+.login-popover {
+  position: absolute;
+  top: 90%;
+  right: 0;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.25s ease-in-out;
+  z-index: 9999;
+}
+
+.login-arrow {
+  position: absolute;
+  top: -8px;
+  right: 135px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #fff;
+  filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.1));
+}
+
+/* ===============================
+   👤 USER DROPDOWN LOGUEADO
+=================================*/
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  width: 220px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+
+.dropdown-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-link {
+  display: block;
+  color: #2e8b57;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
+}
+
+.dropdown-link:hover {
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #b42e3b;
+}
+
+/* ===============================
+   🛒 ICONO CARRITO
+=================================*/
+.cart-icon {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.cart-icon:hover {
+  transform: scale(1.1);
+  color: #00ff88;
+}
+
+/* ===============================
+   📱 MOBILE USER INFO
+=================================*/
+.mobile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8px;
+  color: #fff;
+}
+
+.mobile-links .dropdown-link {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  margin-top: 6px;
+  transition: color 0.2s ease-in-out;
+}
+
+.mobile-links .dropdown-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.mobile-links .logout {
+  color: #ffd700;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.mobile-links .logout:hover {
+  color: #fff;
+}
+
+.user-welcome {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.logout {
+  color: #ffd700;
+  margin-top: 6px;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.logout:hover {
+  color: #fff;
+}
+
+/* ===============================
+   📱 NAVBAR MOBILE FIX
+=================================*/
+@media (max-width: 992px) {
+  .nav-cart-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.6rem 0;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .nav-cart-mobile:hover {
+    color: #ffd700 !important;
+  }
+
+  .nav-cart-mobile .cart-icon {
+    font-size: 1.3rem;
+    color: #ffd700;
+  }
+
+  .navbar-collapse {
+    background: #111;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: #ffd700 !important;
+  }
+
+  .nav-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .login-icon,
+  .cart-icon {
+    font-size: 1.5rem;
+  }
+
+
+}
+
+/* ===============================
+   🎬 ANIMACIONES
+=================================*/
+.animate-dropdown {
+  animation: dropdownIn 0.25s ease-out;
+  transform-origin: top center;
+}
+
+@keyframes dropdownIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

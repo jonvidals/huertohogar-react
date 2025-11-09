@@ -1,0 +1,128 @@
+/* ==================== CART SIDEBAR CSS ==================== */
+.sidebar {
+  position: fixed; 
+  top: 0;
+  right: 0; 
+  width: 350px; 
+  height: 100%; 
+  background: #fff;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.25);
+  z-index: 1000; 
+  
+  /* Inicialmente oculta fuera de la pantalla */
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out; /* Velocidad del deslizamiento */
+  padding: 20px;
+}
+
+/* Estado ABIERTO: Desliza la barra para que sea visible */
+.sidebar.open {
+  transform: translateX(0); 
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #2c3e50;
+}
+
+/* (Opcional) Estilos básicos para los ítems y el total */
+.cart-item {
+    display: grid;
+    grid-template-columns: 1fr 100px auto;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #eee;
+}
+
+.item-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+/* ==================== ESTILOS INTERNOS DE LA SIDEBAR ==================== */
+
+.cart-items-list {
+    /* Esto permite el scroll si la lista es muy larga */
+    max-height: calc(100vh - 200px); /* 100vh menos el espacio del header/footer */
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex; /* Usamos flexbox para alinear los elementos del ítem */
+    justify-content: space-between; /* Espacio entre nombre, controles y precio */
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-name {
+    flex-grow: 1; /* Permite que el nombre ocupe el espacio principal */
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espacio entre botones y cantidad */
+}
+
+.item-controls button {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px 8px;
+    cursor: pointer;
+}
+
+.item-qty {
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+.cart-footer {
+    border-top: 2px solid #3dae2b;
+    padding-top: 15px;
+}
+
+.cart-footer h4 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background-color: #3dae2b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-checkout:hover {
+    background-color: #2a7e1f;
+}

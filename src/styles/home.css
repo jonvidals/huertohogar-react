@@ -1,0 +1,369 @@
+#home-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+#home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25));
+  z-index: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 0 1rem;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+#home-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#home-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+#home-hero .btn-primary {
+  background-color: var(--verde-principal);
+  border-color: var(--verde-principal);
+  font-weight: 600;
+  padding: 0.9rem 1.8rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+#home-hero .btn-primary:hover {
+  background-color: var(--verde-oscuro);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* ====== GENERAL ====== */
+section {
+  padding: 80px 0;
+  scroll-margin-top: 100px;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: var(--verde-oscuro);
+  position: relative;
+  letter-spacing: 0.5px
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--verde-principal);
+  margin: 12px auto 0;
+  margin-bottom:60px;
+  border-radius: 2px;
+}
+
+/* ====== PRODUCTOS DESTACADOS ====== */
+#productos-destacados {
+  background-color: var(--fondo-suave);
+}
+
+#productos-destacados .card {
+  border: none;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+#productos-destacados .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+#productos-destacados .card-title {
+  color: var(--verde-oscuro);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#productos-destacados .card-text {
+  color: var(--texto-gris);
+  font-size: 0.95rem;
+}
+
+#productos-destacados button {
+  background-color: var(--verde-principal);
+  border: none;
+  transition: all 0.25s ease;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+#productos-destacados button:hover {
+  background-color: var(--verde-oscuro);
+  transform: translateY(-2px);
+}
+
+/* ====== BENEFICIOS ====== */
+#beneficios {
+  background: #ffffff;
+  text-align: center;
+}
+
+#beneficios .row {
+  justify-content: center;
+  gap: 25px; /* separa las columnas */
+}
+
+#beneficios h5 {
+  color: var(--verde-oscuro);
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+#beneficios p {
+  color: var(--texto-suave);
+  max-width: 280px;
+  margin: 10px auto 0;
+  line-height: 1.5;
+}
+
+#beneficios .col-md-4 {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+  padding: 28px 20px;
+  border-radius: 25px;
+  cursor: default;
+  background: #fff;
+  margin: 0 12px; /* agrega espacio horizontal */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform-origin: center;
+}
+
+/* Hover con efecto suave y luminoso */
+#beneficios .col-md-4:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow:
+    0 14px 28px var(--sombra-suave),
+    0 6px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #fafff9 0%, #f6fff8 100%);
+}
+
+/* Animación sutil en el título y texto */
+#beneficios .col-md-4 h5 {
+  color: #2e7d32;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+#beneficios .col-md-4:hover h5 {
+  color: #27e68c;
+}
+
+#beneficios .col-md-4 p {
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+#beneficios .col-md-4:hover p {
+  color: #2e7d32;
+}
+
+/* ====== SECCIÓN FINAL ====== */
+#final {
+  background: linear-gradient(135deg, var(--verde-principal), var(--verde-claro));
+  color: white;
+  text-align: center;
+  border-radius: var(--radius-xl);
+  margin: 80px auto;
+  padding: 80px 20px;
+  max-width: 1000px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+#final h2 {
+  color: white;
+}
+
+#final p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+#final button {
+  background-color: white;
+  color: var(--verde-principal);
+  font-weight: 600;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  transition: all 0.25s ease-in-out;
+}
+
+#final button:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+#nosotros {
+  background: #fafdfb;
+  padding: 100px 0;
+}
+
+#nosotros h2 {
+  color: var(--verde-oscuro);
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+#nosotros p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Imagen más profesional */
+#nosotros img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 25px;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 6px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.4s ease;
+  filter: brightness(0.97) saturate(1.05);
+}
+
+/* Efecto profesional al pasar el mouse */
+#nosotros img:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 16px 40px rgba(0, 0, 0, 0.15),
+    0 6px 18px rgba(57, 185, 114, 0.15);
+  filter: brightness(1.02) saturate(1.1);
+}
+
+/* Alineación de texto */
+#nosotros .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+#nosotros ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+#nosotros ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+#nosotros ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Animación de aparición/desaparición */
+.fade-in {
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+
+/* ====== ANIMACIONES ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+  #home-hero h1 {
+    font-size: 2.6rem;
+  }
+
+  #home-hero p {
+    font-size: 1.1rem;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  #beneficios .row {
+    gap: 16px;
+  }
+
+  #beneficios .col-md-4 {
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  #home-hero h1 {
+    font-size: 2rem;
+  }
+
+  #home-hero p {
+    font-size: 1rem;
+  }
+
+  #final {
+    padding: 60px 15px;
+  }
+} 

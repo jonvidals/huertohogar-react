@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "nombre": "Invitado",
+    "email": "guest@hh.cl",
+    "password": "guest"
+  },
+  {
+    "id": 2,
+    "nombre": "Jonathan Vidal",
+    "email": "jonathan@hh.cl",
+    "password": "12345",
+    "address": "Concepción",
+    "city": "Concepción",
+    "isAdmin": true
+  },
+  {
+    "id": 3,
+    "nombre": "Priscila Soto",
+    "email": "priscila@hh.cl",
+    "password": "98765",
+    "city": "Santiago"
+  }
+]

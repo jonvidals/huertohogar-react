@@ -1,5 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600&display=swap');
+/* ===============================
+   Fuentes elegantes y modernas
+=================================*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
 
+/* ===============================
+   Variables de color y fuente
+=================================*/
+:root {
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --color-primary: #27e68c;       /* Verde orgánico */
+  --color-secondary: #ffb347;     /* Dorado cálido */
+  --color-bg: #ffffff;
+  --color-text: #1e1e1e;
+
+  --radius: 0.6rem;
+  --shadow-light: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* ===============================
+   Base general
+=================================*/
 html, body, #root {
   height: 100%;
   background-color: var(--color-bg);
@@ -11,23 +34,32 @@ html, body, #root {
 h1, h2, h3, h4 {
   font-family: var(--font-title);
   color: var(--color-primary);
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 a {
   color: var(--color-primary);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 a:hover {
   color: var(--color-secondary);
 }
 
+/* ===============================
+   Botones y Cards
+=================================*/
 .btn-primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 .btn-primary:hover {
-  background-color: #256d45;
-  border-color: #256d45;
+  background-color: #23c77a;
+  border-color: #23c77a;
+  transform: translateY(-2px);
 }
 
 .container-narrow {
@@ -43,26 +75,45 @@ a:hover {
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
+/* ===============================
+   Hero principal
+=================================*/
 .hero {
   min-height: 80vh;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
               url('../assets/img/verduras/hero.jpg') center/cover no-repeat;
-
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #f8f8f8;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
 /* ===============================
    Navbar transparente animada
 =================================*/
 .custom-navbar {
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
-
 .navbar-transparent {
   background: transparent !important;
   box-shadow: none;
 }
-
 .navbar-scrolled {
   background: rgba(0, 0, 0, 0.9) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -70,7 +121,7 @@ a:hover {
 }
 
 /* ===============================
-   Logo y texto
+   Logo y texto animado
 =================================*/
 .brand {
   font-weight: 700;
@@ -82,58 +133,42 @@ a:hover {
   font-size: 1.6rem;
   transition: color 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 }
-
-
+.login-container {
+  margin-top: 120px; /* deja espacio debajo del navbar fijo */
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Estado inicial */
 .brand-default .brand-text {
   color: #00ff88;
   text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
 }
-
-/* Estado con scroll */
-/* ===== Logo animado sutil ===== */
-
-/* Estado inicial (sin scroll) */
 .brand-default .logo-icon {
-  color: #27e68c; /* verde esmeralda suave */
+  color: #27e68c;
   filter: drop-shadow(0 0 6px rgba(39, 230, 140, 0.6));
   animation: leafIdle 6s ease-in-out infinite;
-  transform: scale(1);
 }
 
 /* Estado con scroll */
 .brand-scrolled .logo-icon {
-  color: #ffe066; /* amarillo cálido */
+  color: #ffe066;
   filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.8));
   animation: leafGlow 4s ease-in-out infinite;
-  transform: scale(1.05);
 }
-
-/* Animación de respiración (idle) */
-@keyframes leafIdle {
-  0%, 100% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 6px rgba(39, 230, 140, 0.6));
-  }
-  50% {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 10px rgba(39, 230, 140, 0.8));
-  }
-}
-
-/* Animación de brillo al hacer scroll */
-@keyframes leafGlow {
-  0%, 100% {
-    color: #ffe066;
-    filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.8));
-  }
-  50% {
-    color: #ffb347; /* pasa a un dorado más cálido */
-    filter: drop-shadow(0 0 12px rgba(255, 179, 71, 1));
-  }
-}
-
 .brand-scrolled .brand-text {
   color: #ffffff;
+}
+
+/* Animaciones del logo */
+@keyframes leafIdle {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(39,230,140,0.6)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 10px rgba(39,230,140,0.8)); }
+}
+@keyframes leafGlow {
+  0%, 100% { color: #ffe066; filter: drop-shadow(0 0 8px rgba(255,224,102,0.8)); }
+  50% { color: #ffb347; filter: drop-shadow(0 0 12px rgba(255,179,71,1)); }
 }
 
 /* ===============================
@@ -143,8 +178,6 @@ a:hover {
   transition: color 0.4s ease, transform 0.2s ease;
   font-weight: 500;
 }
-
-/* Sin scroll */
 .link-default {
   color: #f7f7f7 !important;
 }
@@ -152,8 +185,6 @@ a:hover {
   color: #00ff88 !important;
   transform: translateY(-2px);
 }
-
-/* Con scroll */
 .link-scrolled {
   color: #f7f7f7 !important;
 }
@@ -161,3 +192,13 @@ a:hover {
   color: #ffd700 !important;
   transform: translateY(-2px);
 }
+
+.carrito-titulo {
+  font-family: 'Lora', serif; /* nueva fuente elegante */
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
