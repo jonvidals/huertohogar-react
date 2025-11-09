@@ -1,12 +1,7 @@
-/* ===============================
-   Fuentes elegantes y modernas
-=================================*/
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap');
 
-/* ===============================
-   Variables de color y fuente
-=================================*/
 :root {
   --font-title: 'Playfair Display', serif;
   --font-body: 'Poppins', sans-serif;
@@ -20,9 +15,6 @@
   --shadow-light: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* ===============================
-   Base general
-=================================*/
 html, body, #root {
   height: 100%;
   background-color: var(--color-bg);
@@ -47,9 +39,6 @@ a:hover {
   color: var(--color-secondary);
 }
 
-/* ===============================
-   Botones y Cards
-=================================*/
 .btn-primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
@@ -78,9 +67,7 @@ a:hover {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* ===============================
-   Hero principal
-=================================*/
+
 .hero {
   min-height: 80vh;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)),
@@ -104,9 +91,7 @@ a:hover {
   text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
-/* ===============================
-   Navbar transparente animada
-=================================*/
+
 .custom-navbar {
   transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
@@ -120,9 +105,6 @@ a:hover {
   backdrop-filter: blur(6px);
 }
 
-/* ===============================
-   Logo y texto animado
-=================================*/
 .brand {
   font-weight: 700;
   font-size: 1.5rem;
@@ -134,13 +116,12 @@ a:hover {
   transition: color 0.4s ease, transform 0.4s ease, filter 0.4s ease;
 }
 .login-container {
-  margin-top: 120px; /* deja espacio debajo del navbar fijo */
+  margin-top: 120px; 
   min-height: calc(100vh - 120px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-/* Estado inicial */
 .brand-default .brand-text {
   color: #00ff88;
   text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
@@ -151,7 +132,6 @@ a:hover {
   animation: leafIdle 6s ease-in-out infinite;
 }
 
-/* Estado con scroll */
 .brand-scrolled .logo-icon {
   color: #ffe066;
   filter: drop-shadow(0 0 8px rgba(255, 224, 102, 0.8));
@@ -161,7 +141,6 @@ a:hover {
   color: #ffffff;
 }
 
-/* Animaciones del logo */
 @keyframes leafIdle {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(39,230,140,0.6)); }
   50% { transform: scale(1.08); filter: drop-shadow(0 0 10px rgba(39,230,140,0.8)); }
@@ -171,9 +150,6 @@ a:hover {
   50% { color: #ffb347; filter: drop-shadow(0 0 12px rgba(255,179,71,1)); }
 }
 
-/* ===============================
-   Links del navbar
-=================================*/
 .nav-item {
   transition: color 0.4s ease, transform 0.2s ease;
   font-weight: 500;
@@ -194,7 +170,7 @@ a:hover {
 }
 
 .carrito-titulo {
-  font-family: 'Lora', serif; /* nueva fuente elegante */
+  font-family: 'Lora', serif; 
   font-weight: 700;
   font-size: 2.5rem;
   color: var(--color-primary);

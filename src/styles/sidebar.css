@@ -1,4 +1,4 @@
-/* ==================== CART SIDEBAR CSS ==================== */
+
 .sidebar {
   position: fixed; 
   top: 0;
@@ -9,13 +9,11 @@
   box-shadow: -4px 0 15px rgba(0, 0, 0, 0.25);
   z-index: 1000; 
   
-  /* Inicialmente oculta fuera de la pantalla */
   transform: translateX(100%);
-  transition: transform 0.4s ease-in-out; /* Velocidad del deslizamiento */
+  transition: transform 0.4s ease-in-out; 
   padding: 20px;
 }
 
-/* Estado ABIERTO: Desliza la barra para que sea visible */
 .sidebar.open {
   transform: translateX(0); 
 }
@@ -37,7 +35,6 @@
   color: #2c3e50;
 }
 
-/* (Opcional) Estilos básicos para los ítems y el total */
 .cart-item {
     display: grid;
     grid-template-columns: 1fr 100px auto;
@@ -53,26 +50,23 @@
     gap: 5px;
     align-items: center;
 }
-/* ==================== ESTILOS INTERNOS DE LA SIDEBAR ==================== */
-
 .cart-items-list {
-    /* Esto permite el scroll si la lista es muy larga */
-    max-height: calc(100vh - 200px); /* 100vh menos el espacio del header/footer */
+    max-height: calc(100vh - 200px); 
     overflow-y: auto;
     padding-right: 10px;
     margin-bottom: 20px;
 }
 
 .cart-item {
-    display: flex; /* Usamos flexbox para alinear los elementos del ítem */
-    justify-content: space-between; /* Espacio entre nombre, controles y precio */
+    display: flex; 
+    justify-content: space-between; 
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px dashed #eee;
 }
 
 .item-name {
-    flex-grow: 1; /* Permite que el nombre ocupe el espacio principal */
+    flex-grow: 1; 
     font-weight: 500;
     margin-right: 10px;
 }
@@ -80,7 +74,7 @@
 .item-controls {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre botones y cantidad */
+    gap: 5px; 
 }
 
 .item-controls button {

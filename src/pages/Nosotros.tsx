@@ -5,7 +5,6 @@ export default function Nosotros() {
   return (
     <div id="nosotros">
       <Container>
-        {/* Título y subtítulo centrados */}
         <div className="text-center mb-5">
           <h2 className="productos-title">Sobre HuertoHogar</h2>
           <p className="productos-subtitle mx-auto" style={{ maxWidth: "800px" }}>
@@ -14,7 +13,6 @@ export default function Nosotros() {
           </p>
         </div>
 
-        {/* Contenido principal: imagen + texto */}
         <Row className="align-items-center">
           <Col md={6} className="mb-4">
             <div className="nosotros-imagen-wrapper">

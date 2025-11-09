@@ -1,6 +1,4 @@
-/* ===============================
-   🌿 NAVBAR GENERAL
-=================================*/
+
 .custom-navbar {
   transition: background 0.3s ease, box-shadow 0.3s ease;
   position: fixed;
@@ -11,7 +9,6 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* 🔹 Logo */
 .brand-text span {
   color: #2e8b57;
 }
@@ -21,7 +18,6 @@
   font-size: 1.6rem;
 }
 
-/* 🔹 Links */
 .nav-item {
   color: #f8f9fa !important;
   font-weight: 500;
@@ -32,7 +28,6 @@
   color: #ffd700 !important;
 }
 
-/* 🔹 Toggle (hamburguesa) */
 .menu-toggle {
   border: none !important;
   background: transparent !important;
@@ -43,9 +38,7 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* ===============================
-   🔐 BOTÓN LOGIN
-=================================*/
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -87,9 +80,6 @@
   display: inline;
 }
 
-/* ===============================
-   🔳 LOGIN POPOVER
-=================================*/
 .login-popover {
   position: absolute;
   top: 90%;
@@ -115,9 +105,6 @@
   filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.1));
 }
 
-/* ===============================
-   👤 USER DROPDOWN LOGUEADO
-=================================*/
 .user-dropdown {
   position: absolute;
   top: calc(100% + 10px);
@@ -177,9 +164,6 @@
   background: #b42e3b;
 }
 
-/* ===============================
-   🛒 ICONO CARRITO
-=================================*/
 .cart-icon {
   color: #fff;
   font-size: 1.5rem;
@@ -193,9 +177,6 @@
   color: #00ff88;
 }
 
-/* ===============================
-   📱 MOBILE USER INFO
-=================================*/
 .mobile-user {
   display: flex;
   flex-direction: column;
@@ -251,9 +232,6 @@
   color: #fff;
 }
 
-/* ===============================
-   📱 NAVBAR MOBILE FIX
-=================================*/
 @media (max-width: 992px) {
   .nav-cart-mobile {
     display: flex !important;
@@ -312,9 +290,6 @@
 
 }
 
-/* ===============================
-   🎬 ANIMACIONES
-=================================*/
 .animate-dropdown {
   animation: dropdownIn 0.25s ease-out;
   transform-origin: top center;

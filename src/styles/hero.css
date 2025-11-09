@@ -1,3 +1,18 @@
+.hero-section {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("../assets/img/verduras/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  color: #fff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+
 #home-hero {
   position: relative;
   width: 100%;

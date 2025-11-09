@@ -16,12 +16,11 @@ const LoginBox: React.FC = () => {
 
     if (user) {
       setError("");
-      setSuccess(true); // ✅ muestra mensaje visual
+      setSuccess(true); 
 
-      // Espera 1 segundo antes de redirigir
       setTimeout(() => {
-        navigate("/"); // 🔹 redirige al Home
-        window.location.reload(); // 🔹 actualiza header y muestra alerta en Home
+        navigate("/"); 
+        window.location.reload(); 
       }, 1000);
     } else {
       setError("Correo o contraseña incorrectos");
@@ -30,12 +29,10 @@ const LoginBox: React.FC = () => {
 
   return (
     <div className="login-popover p-4 bg-white rounded shadow position-relative">
-      {/* 🔹 Flecha decorativa */}
       <div className="login-arrow" />
 
       <h5 className="text-center mb-3 text-success fw-bold">Iniciar Sesión</h5>
 
-      {/* Mensajes */}
       {error && <Alert variant="danger">{error}</Alert>}
       {success && (
         <Alert variant="success" className="text-center">
@@ -43,7 +40,6 @@ const LoginBox: React.FC = () => {
         </Alert>
       )}
 
-      {/* Formulario */}
       {!success && (
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
@@ -74,7 +70,6 @@ const LoginBox: React.FC = () => {
         </Form>
       )}
 
-      {/* Enlaces de ayuda */}
       {!success && (
         <div className="text-center small mt-2">
           <button

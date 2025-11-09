@@ -52,7 +52,6 @@ const AdminProducts: React.FC = () => {
         overflowY: "scroll",
       }}
     >
-      {/* 🔹 oscurecimiento radial para los bordes */}
       <div
         style={{
           position: "absolute",

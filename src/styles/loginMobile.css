@@ -1,4 +1,4 @@
-/* 🌿 Fondo general con imagen */
+
 .login-bg {
   background-image: url("https://images.unsplash.com/photo-1606787366850-de6330128bfc?auto=format&fit=crop&w=1920&q=80");
   background-size: cover;
@@ -10,17 +10,15 @@
   align-items: center;
 }
 
-/* 📱 Contenedor centrado */
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px; /* espacio por el navbar */
+  margin-top: 120px; 
   margin-bottom: 60px;
   min-height: calc(100vh - 160px);
 }
 
-/* 🧩 Caja del formulario */
 .login-card {
   max-width: 370px;
   width: 100%;
@@ -30,7 +28,6 @@
   backdrop-filter: blur(5px);
 }
 
-/* ✨ Sombra elegante */
 .shadow-card {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -41,7 +38,6 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
-/* 🖋️ Enlaces */
 .login-card a {
   color: #2e8b57;
   text-decoration: none;
@@ -52,13 +48,11 @@
   text-decoration: underline;
 }
 
-/* ✍️ Inputs */
 .login-card .form-control {
   border-radius: 8px;
   border: 1px solid #ccc;
 }
 
-/* 📱 Adaptación móvil */
 @media (max-width: 768px) {
   .login-bg {
     background-position: center;
@@ -74,16 +68,12 @@
     backdrop-filter: blur(8px);
   }
 }
-/* ===============================
-   🖥️ LOGIN DESKTOP
-=================================*/
-
 .desktop-login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  padding-top: 0; /* elimina el margen del navbar */
+  padding-top: 0; 
 }
 
 .desktop-login .login-container {

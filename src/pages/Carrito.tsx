@@ -3,10 +3,9 @@ import { useState, useEffect } from "react"
 import { Button, Container, Row, Col, Card, Form } from "react-bootstrap"
 import { FaTrashAlt } from "react-icons/fa"
 import Loading from "../components/common/Loading"
-import "../styles/home.css"
+import "../styles/carrito.css"
 import { useNavigate } from "react-router-dom"
 
-// 🧩 Servicios y tipos
 import {
   getCartWithProducts,
   removeFromCart,
@@ -23,13 +22,11 @@ export default function Carrito() {
   const [items, setItems] = useState<Array<CartItem & { product?: Product }>>([])
   const [offsetTop, setOffsetTop] = useState(0)
 
-  // 🔹 Detectar la altura del header
   useEffect(() => {
     const header = document.querySelector("nav.navbar")
     if (header) setOffsetTop(header.clientHeight + 40)
   }, [])
 
-  // 🔹 Cargar el carrito una sola vez al montar
   useEffect(() => {
     setLoading(true)
     setTimeout(() => {
@@ -38,12 +35,10 @@ export default function Carrito() {
     }, 400)
   }, [])
 
-  // 🔹 Función para forzar refresco
   const refreshCart = () => {
     setItems(getCartWithProducts())
   }
 
-  // 🔹 Cambiar cantidad desde el select
   const actualizarCantidad = (productId: number, nuevaCantidad: number) => {
     const actual = items.find(i => i.productId === productId)?.quantity || 0
     const delta = nuevaCantidad - actual
@@ -53,13 +48,11 @@ export default function Carrito() {
     }
   }
 
-  // 🔹 Eliminar producto
   const eliminarProducto = (productId: number) => {
     removeFromCart(productId)
     refreshCart()
   }
 
-  // 🔹 Vaciar carrito
   const vaciarCarrito = () => {
     clearCart()
     refreshCart()
@@ -67,7 +60,6 @@ export default function Carrito() {
 
   if (loading) return <Loading />
 
-  // 🔹 Cálculos
   const subtotal = items.reduce(
     (acc, i) => acc + (i.product?.price || 0) * i.quantity,
     0
@@ -93,7 +85,6 @@ export default function Carrito() {
         color: "#f1f1f1",
       }}
     >
-      {/* 🔹 Filtro oscuro para contraste */}
       <div
         style={{
           position: "absolute",
@@ -105,7 +96,6 @@ export default function Carrito() {
         }}
       ></div>
 
-      {/* 🔹 Contenido */}
       <Container style={{ position: "relative", zIndex: 2 }}>
         <h2
           className="carrito-titulo text-center mb-4"
@@ -139,58 +129,54 @@ export default function Carrito() {
           <Row className="g-4">
             <Col lg={8}>
               {items.map((item) => (
-                <Card
-                  className="shadow-sm border-0 rounded-4 mb-3"
-                  key={item.productId}
-                  style={{
-                    backgroundColor: "rgba(255,255,255,0.95)",
-                    color: "#222",
-                  }}
-                >
-                  <Card.Body className="d-flex align-items-center justify-content-between">
-                    <div className="d-flex align-items-center gap-3">
+                <Card className="cart-card mb-3" key={item.productId}>
+                  <Card.Body className="cart-body">
+                    <div className="cart-product-info">
                       <img
                         src={item.product?.image || "/placeholder.png"}
                         alt={item.product?.name}
-                        width={90}
-                        height={90}
-                        className="rounded"
-                        style={{ objectFit: "cover", border: "1px solid #ccc" }}
+                        className="cart-img"
                       />
-                      <div>
-                        <h5 className="mb-1 fw-bold">{item.product?.name}</h5>
-                        <p className="text-success fw-semibold mb-0">
+                      <div className="cart-info">
+                        <h5>{item.product?.name}</h5>
+                        <p className="text-success fw-semibold">
                           ${item.product?.price?.toLocaleString("es-CL")}
                         </p>
+                        <div className="cart-actions">
+                          <div className="cart-qty-control">
+                            <button
+                              className="cart-btn"
+                              onClick={() =>
+                                item.quantity > 1 &&
+                                actualizarCantidad(item.productId, item.quantity - 1)
+                              }
+                            >
+                              –
+                            </button>
+                            <span className="cart-qty-num">{item.quantity}</span>
+                            <button
+                              className="cart-btn"
+                              onClick={() =>
+                                actualizarCantidad(item.productId, item.quantity + 1)
+                              }
+                            >
+                              +
+                            </button>
+                          </div>
+
+                          <Button
+                            variant="outline-danger"
+                            size="sm"
+                            onClick={() => eliminarProducto(item.productId)}
+                          >
+                            <FaTrashAlt />
+                          </Button>
+                        </div>
                       </div>
-                    </div>
-
-                    <div className="d-flex align-items-center gap-3">
-                      <Form.Select
-                        size="sm"
-                        value={item.quantity}
-                        onChange={(e) =>
-                          actualizarCantidad(item.productId, Number(e.target.value))
-                        }
-                        style={{ width: "70px" }}
-                      >
-                        {[1, 2, 3, 4, 5].map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </Form.Select>
-
-                      <Button
-                        variant="outline-danger"
-                        size="sm"
-                        onClick={() => eliminarProducto(item.productId)}
-                      >
-                        <FaTrashAlt />
-                      </Button>
                     </div>
                   </Card.Body>
                 </Card>
+
               ))}
             </Col>
 
@@ -216,26 +202,26 @@ export default function Carrito() {
                   <span>Total:</span>
                   <span>${total.toLocaleString("es-CL")}</span>
                 </div>
-<Button
-  variant="success"
-  className="w-100 fw-semibold"
-  style={{
-    backgroundColor: "#2E8B57",
-    border: "none",
-    boxShadow: "0 0 10px rgba(0,0,0,0.4)",
-  }}
-  onClick={() => {
-    const user = localStorage.getItem("user")
-    if (user) {
-      navigate("/checkout") // ✅ va a la página de pago si está logueado
-    } else {
-  navigate("/login-mobile")
-}
+                <Button
+                  variant="success"
+                  className="w-100 fw-semibold"
+                  style={{
+                    backgroundColor: "#2E8B57",
+                    border: "none",
+                    boxShadow: "0 0 10px rgba(0,0,0,0.4)",
+                  }}
+                  onClick={() => {
+                    const user = localStorage.getItem("user")
+                    if (user) {
+                      navigate("/checkout")
+                    } else {
+                      navigate("/login-mobile")
+                    }
 
-  }}
->
-  Proceder al Pago
-</Button>
+                  }}
+                >
+                  Proceder al Pago
+                </Button>
 
                 <Button
                   variant="outline-secondary"

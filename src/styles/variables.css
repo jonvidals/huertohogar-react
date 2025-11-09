@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #2E8B57; /* Verde esmeralda */
-  --color-secondary: #FFD700; /* Amarillo mostaza */
+  --color-primary: #2E8B57; 
+  --color-secondary: #FFD700; 
   --color-accent: #F1C40F;
   --color-bg: #F7F7F7;
   --color-text: #1F2937;
@@ -14,11 +14,9 @@
   --sombra-suave: rgba(57, 185, 114, 0.25);
   --radius-xl: 30px;
 
-  /* 🧱 Tipografía */
   --font-body: 'Montserrat', system-ui, sans-serif;
   --font-title: 'Playfair Display', serif;
 
-  /* 🌈 Sombras y bordes */
   --shadow-light: 0 2px 8px rgba(0,0,0,0.05);
   --radius: 12px;
 }

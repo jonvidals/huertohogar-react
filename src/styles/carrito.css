@@ -1,0 +1,139 @@
+.cart-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+}
+
+.cart-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.cart-product-info {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.cart-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.cart-info h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.cart-info p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 8px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-left: auto;
+}
+
+.cart-qty-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9fff9;
+  border: 1.8px solid #2e7d32;
+  border-radius: 10px;
+  padding: 4px 6px;
+  width: 90px;
+  height: 36px;
+}
+
+.cart-qty-num {
+  font-weight: 600;
+  color: #222;
+  font-size: 0.95rem;
+  width: 30px;
+  text-align: center;
+}
+
+.cart-btn {
+  background-color: #2e7d32;
+  border: none;
+  color: white;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cart-btn:hover {
+  background-color: #1b5e20;
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cart-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-img {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+
+  .cart-actions {
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .cart-qty-control {
+    width: 80px;
+    height: 32px;
+    padding: 3px 4px;
+  }
+
+  .cart-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0.9rem;
+  }
+
+  .cart-qty-num {
+    font-size: 0.85rem;
+  }
+}

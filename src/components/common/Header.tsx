@@ -21,14 +21,12 @@ export default function Header() {
   const loginRef = useRef<HTMLDivElement>(null);
   const user = getLoggedUser();
 
-  // 🔹 Detectar modo responsive
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // 🔹 Cambiar color del navbar con scroll o en páginas fijas
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
 
@@ -45,12 +43,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  // 🔹 Cerrar menú al cambiar de página
   useEffect(() => {
     if (expanded) setExpanded(false);
   }, [location.pathname]);
 
-  // 🔹 Cerrar popup al hacer click afuera
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (loginRef.current && !loginRef.current.contains(event.target as Node)) {
@@ -60,8 +56,6 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-
-  // 🔹 Ir a una sección del home
   const goToHomeAnchor = (id: string) => {
     if (location.pathname !== "/") {
       navigate("/");
@@ -76,7 +70,6 @@ export default function Header() {
     setExpanded(false);
   };
 
-  // 🔹 Cerrar sesión
   const handleLogout = () => {
     logoutUser();
     navigate("/");
@@ -95,7 +88,6 @@ export default function Header() {
       }`}
     >
       <Container className="container-narrow">
-        {/* ===== Marca / Logo ===== */}
         <Navbar.Brand
           as={NavLink}
           to="/"
@@ -109,13 +101,11 @@ export default function Header() {
           </span>
         </Navbar.Brand>
 
-        {/* ===== Botón Hamburguesa ===== */}
         <Navbar.Toggle
           aria-controls="navbar-nav"
           className="border-0 menu-toggle"
         />
 
-        {/* ===== Links ===== */}
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto align-items-center justify-content-end">
             <Nav.Link
@@ -148,7 +138,6 @@ export default function Header() {
               Contacto
             </Nav.Link>
 
-            {/* 🛒 Carrito solo en MOBILE (arriba en el menú) */}
             {isMobile && (
               <Nav.Link
                 as={NavLink}
@@ -160,11 +149,8 @@ export default function Header() {
                 Carrito
               </Nav.Link>
             )}
-
-            {/* ===== Acciones (Login + Carrito Desktop) ===== */}
             <div className="nav-actions" ref={loginRef}>
               {isMobile ? (
-                // 📱 Responsive
                 user && isLoggedIn() ? (
                   <div className="mobile-user">
                     <span className="user-welcome">
@@ -209,7 +195,6 @@ export default function Header() {
                   </div>
                 )
               ) : (
-                // 💻 Escritorio
                 <>
                   <div
                     className="login-button"
@@ -221,14 +206,12 @@ export default function Header() {
                     </span>
                   </div>
 
-                  {/* 🔹 Carrito solo en DESKTOP */}
                   <Link to="/carrito" className="ms-4">
                     <FaShoppingCart className="cart-icon" />
                   </Link>
                 </>
               )}
 
-              {/* 🔹 Popover login (no logueado) */}
               {showLogin && !isLoggedIn() && !isMobile && (
                 <div className="login-popover">
                   <div className="login-arrow"></div>
@@ -236,7 +219,6 @@ export default function Header() {
                 </div>
               )}
 
-              {/* 🔹 Dropdown usuario logueado (solo escritorio) */}
               {showLogin && isLoggedIn() && !isMobile && (
                 <div className="user-dropdown animate-dropdown">
                   <div className="dropdown-arrow"></div>

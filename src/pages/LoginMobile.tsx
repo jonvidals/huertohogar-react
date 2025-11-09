@@ -11,24 +11,20 @@ export default function LoginMobile() {
   const [error, setError] = useState("");
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-  // Detectar si es móvil
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Si ya está logueado o entra desde PC → redirigir
   useEffect(() => {
     if (isLoggedIn()) navigate("/");
   }, [isMobile]);
   useEffect(() => {
-  // Bloquea el scroll al entrar
   document.body.style.overflow = "hidden";
   document.body.style.height = "100%";
 
   return () => {
-    // Restaura scroll al salir
     document.body.style.overflow = "auto";
     document.body.style.height = "auto";
   };

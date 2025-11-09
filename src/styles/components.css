@@ -1,6 +1,4 @@
-/* ?? Estilos generales para componentes reutilizables */
 
-/* ?? Bot�n flotante del carrito */
 .cart-floating-button {
   position: fixed;
   bottom: 25px;
@@ -24,7 +22,6 @@
   transform: scale(1.08);
 }
 
-/* ?? Contador de �tems del carrito */
 .cart-counter {
   position: absolute;
   top: -5px;
@@ -41,18 +38,13 @@
   font-weight: bold;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
 }
-/* 🎯 Estilos generales para componentes reutilizables */
-
-/* ------------------------ */
-/* 🧾 SIDEBAR DEL CARRITO */
-/* ------------------------ */
 
 .cart-overlay {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(1px);
-  z-index: 5000; /* antes 1999 */
+  z-index: 5000; 
   animation: fadeIn 0.2s ease-in-out;
 }
 
@@ -64,7 +56,7 @@
   height: 100vh;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  z-index: 6000; /* antes 2000 */
+  z-index: 6000; 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -92,7 +84,6 @@
   }
 }
 
-/* 🔹 Botón cerrar */
 .close-button {
   background: none;
   border: none;
@@ -104,7 +95,6 @@
   color: #555;
 }
 
-/* 🔹 Título del carrito */
 .cart-title {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
@@ -115,21 +105,18 @@
   padding-bottom: 0.5rem;
 }
 
-/* 🔹 Contenedor principal del contenido */
 .cart-content {
   flex: 1;
   overflow-y: auto;
   padding: 0 1.5rem 1rem 1.5rem;
 }
 
-/* 🔹 Mensaje carrito vacío */
 .empty-cart {
   text-align: center;
   color: #777;
   margin-top: 2rem;
 }
 
-/* 🔹 Ítem de producto */
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -155,7 +142,6 @@
   font-size: 0.8rem;
 }
 
-/* 🔹 Controles de cantidad */
 .cart-item-controls {
   display: flex;
   align-items: center;
@@ -192,7 +178,6 @@
   text-align: center;
 }
 
-/* 🔹 Total */
 .cart-total {
   text-align: right;
   margin-top: 0.8rem;
@@ -201,7 +186,6 @@
   color: #333;
 }
 
-/* 🔹 Footer fijo */
 .cart-footer {
   position: sticky;
   bottom: 0;
@@ -213,7 +197,6 @@
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Botón "Ir al pago" */
 .checkout-button {
   background-color: #2e8b57;
   color: #fff;
@@ -241,7 +224,6 @@
   overflow-y: auto;
 }
 
-/* 🌑 Sombreado radial suave */
 .order-page::before {
   content: "";
   position: absolute;
@@ -254,7 +236,6 @@
   z-index: 1;
 }
 
-/* 🧩 Contenedor del contenido principal */
 .order-page-content {
   position: relative;
   z-index: 2;
@@ -262,7 +243,6 @@
   max-width: 600px;
 }
 
-/* 🪶 Card de resultado */
 .order-card {
   background-color: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
@@ -277,7 +257,6 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* ✍️ Títulos */
 .order-title {
   font-family: "Playfair Display", serif;
   font-weight: 600;
@@ -297,7 +276,6 @@
   border-color: #dc3545;
 }
 
-/* 📱 Adaptación móvil */
 @media (max-width: 768px) {
   .order-card {
     margin: 0 1rem;
@@ -307,7 +285,6 @@
   background-color: #256c46;
 }
 
-/* Botón "Vaciar carrito" */
 .clearcart-button {
   background-color: #dc3545;
   color: #fff;
@@ -335,3 +312,4 @@ header,
 .navbar-container {
   z-index: 1000 !important; 
 }
+

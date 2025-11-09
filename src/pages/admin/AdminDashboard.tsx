@@ -35,7 +35,6 @@ export default function AdminDashboard() {
         overflowY: "scroll",
       }}
     >
-      {/* 🔹 Oscurecimiento adicional en bordes */}
       <div
         style={{
           position: "absolute",
@@ -46,7 +45,6 @@ export default function AdminDashboard() {
         }}
       ></div>
 
-      {/* 🔹 Contenido principal */}
       <div style={{ position: "relative", zIndex: 2 }}>
         <Card
           className="shadow-lg p-4"

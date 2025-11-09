@@ -20,12 +20,10 @@ import LoginMobile from "./pages/LoginMobile";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/variables.css";
 import "./styles/global.css";
-/* 🔐 Componente para proteger rutas privadas */
 function PrivateRoute({ children }: { children: React.JSX.Element }) {
   return isLoggedIn() ? children : <Navigate to="/login" />;
 }
 
-/* 🔐 Componente para rutas solo para admin */
 function AdminRoute({ children }: { children: React.JSX.Element }) {
   const user = getLoggedUser();
   if (!isLoggedIn()) return <Navigate to="/login" />;
@@ -40,7 +38,6 @@ const App: React.FC = () => {
         <Header />
         <main className="flex-fill">
           <Routes>
-            {/* Públicas */}
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/productos" element={<Productos />} />
@@ -52,8 +49,6 @@ const App: React.FC = () => {
             <Route path="/compra-fallida" element={<OrderFailurePage />} />
             <Route path="/login-mobile" element={<LoginMobile />} />
 
-
-            {/* Privadas: admin */}
             <Route
               path="/admin"
               element={

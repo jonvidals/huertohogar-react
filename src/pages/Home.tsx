@@ -16,20 +16,17 @@ export default function Home() {
   const [showWelcome, setShowWelcome] = useState(false);
   const navigate = useNavigate();
 
-  // Simulación de carga inicial
   useEffect(() => {
     const timeout = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timeout);
   }, []);
 
-  // Detectar login y mostrar alerta
   useEffect(() => {
     if (isLoggedIn()) {
       const u = getLoggedUser();
       setUser(u);
       setShowWelcome(true);
 
-      // Ocultar mensaje después de unos segundos
       const timer = setTimeout(() => setShowWelcome(false), 4000);
       return () => clearTimeout(timer);
     }
@@ -43,7 +40,6 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* 🔹 Alerta animada de bienvenida */}
       {showWelcome && user && (
         <div className="welcome-container text-center mt-4">
           <Alert
@@ -62,7 +58,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== SECCIÓN PRODUCTOS DESTACADOS ===== */}
       <Container id="productos-destacados" className="py-5">
         <h2>Productos Destacados</h2>
         <Row className="g-4">
@@ -93,7 +88,6 @@ export default function Home() {
         </Row>
       </Container>
 
-      {/* ===== SECCIÓN BENEFICIOS ===== */}
       <Container id="beneficios" className="py-5">
         <h2>¿Por qué elegirnos?</h2>
         <Row className="g-4">
@@ -112,10 +106,8 @@ export default function Home() {
         </Row>
       </Container>
 
-      {/* ===== NUEVAS SECCIONES ===== */}
       <Nosotros />
 
-      {/* ===== SECCIÓN FINAL ===== */}
       <Container id="final" className="py-5 text-center">
         <h2>Únete a nuestra comunidad</h2>
         <p>Recibe recetas, tips de cultivo y descuentos exclusivos.</p>
